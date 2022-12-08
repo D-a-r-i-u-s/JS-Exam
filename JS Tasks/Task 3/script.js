@@ -11,4 +11,33 @@ Pastaba: Sukurta kortelė, kurioje yra pateikiama vartotojo informacija, turi
 būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'https://api.github.com/users';
+// const ENDPOINT = 'https://api.github.com/users'; 
+
+async function getData() {
+  try {
+    const response = await fetch('https://api.github.com/users');
+    if (response.ok) {
+      const data = await response.json();
+      renderData(data);
+      console.log(data);
+    }
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+document.querySelector('#btn').addEventListener('click', () => getData());
+const renderData = (data) => {
+  const output = document.querySelector('#output');
+  let postData = '';
+  data.forEach(post => {
+    const name = post.login.charAt(0).toUpperCase() + post.login.slice(1);
+
+    postData += `<div class="user-card">
+                      <img class="avatar" src="${post.avatar_url}">
+                      <h2 class="user-name">${name}</h2>
+                  </div>`
+  })
+  output.innerHTML = postData;
+}

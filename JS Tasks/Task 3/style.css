@@ -59,3 +59,31 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+/* Vartotoju korteliu stilizavimas */
+
+.avatar {
+  max-height: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.user-card {
+  border: solid 1px #222;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.user-name {
+  margin: 10px;
+}
+
+#output {
+  display: flex;
+  gap: 20px;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
