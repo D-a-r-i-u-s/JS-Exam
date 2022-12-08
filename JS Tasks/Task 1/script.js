@@ -8,3 +8,16 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: rezultatas turi būti matomas pateikus formą ir atvaizduojamas
 <div id="output"></div> viduje. Gautus atsakymus stilizuokite naudojant CSS;
 ------------------------------------------------------------------- */
+
+const formEl = document.querySelector('form');
+const output = document.querySelector('#output');
+
+formEl.onsubmit = (event) => {
+    event.preventDefault();
+    const input = formEl.querySelector('#search').value;
+    const calculate = [input * 2.2046 + " lb", input / 0.0010000 + " g", input * 35.274 + " oz"];
+    calculate.forEach(result => {
+        output.innerHTML += `<div class="result">${result}</div>`;        
+    })    
+}
+

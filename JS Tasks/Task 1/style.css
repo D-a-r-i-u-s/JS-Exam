@@ -12,6 +12,7 @@
   min-height: 100vh;
   min-width: calc(100vw - (100vw - 100%));
   background-color: #fec631;
+  
 }
 
 .headline {
@@ -52,6 +53,21 @@ form {
   color: #fff;
 }
 
+#output {
+  text-align: center;
+  background-color: #fff;
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.result {
+  font-size: 1.1em;
+  padding: 20px;
+  
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .headline {
@@ -59,7 +75,10 @@ form {
   }
 
   #search,
-  #submit-btn {
+  #submit-btn,
+  .result
+   {
     font-size: 2em;
   }
 }
+
