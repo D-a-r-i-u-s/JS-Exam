@@ -11,11 +11,11 @@ Pastaba: Sukurta kortelė, kurioje yra pateikiama vartotojo informacija, turi
 būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
-// const ENDPOINT = 'https://api.github.com/users'; 
+const ENDPOINT = 'https://api.github.com/users'; 
 
-async function getData() {
+async function getData(url) {
   try {
-    const response = await fetch('https://api.github.com/users');
+    const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();
       renderData(data);
@@ -27,7 +27,7 @@ async function getData() {
   }
 }
 
-document.querySelector('#btn').addEventListener('click', () => getData());
+document.querySelector('#btn').addEventListener('click', () => getData(ENDPOINT));
 const renderData = (data) => {
   const output = document.querySelector('#output');
   let postData = '';
