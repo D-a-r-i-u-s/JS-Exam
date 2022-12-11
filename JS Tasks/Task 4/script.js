@@ -8,11 +8,11 @@ Pastaba: Sukurta kortelė, kurioje yra informacija apie automobilį (brand), tur
 būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
-// const ENDPOINT = 'cars.json';
+const ENDPOINT = './cars.json';
 
-async function getData() {
+async function getData(url) {
     try {
-        const response = await fetch('./cars.json');
+        const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
             renderData(data);
@@ -37,4 +37,4 @@ const renderData = (data) => {
     output.innerHTML = postData;
 }
 
-getData();
+getData(ENDPOINT);
